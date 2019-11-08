@@ -1,0 +1,9 @@
+name: 'yarn install'
+description: 'Install dependencies for a node project with yarn'
+inputs:
+  npm-token:
+    description: 'NPM token'
+    required: false
+runs:
+  using: 'node12'
+  main: 'yarn-install.js'
