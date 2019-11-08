@@ -7,17 +7,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const core = __importStar(require("@actions/core"));
 const child_process_1 = require("child_process");
+const core = __importStar(require("@actions/core"));
 function exec(command, args, options = {}) {
     const name = [command, ...args].join(' ');
     return core.group(name, () => new Promise((resolve, reject) => {
         const child = child_process_1.spawn(command, args, {
-            stdio: "inherit",
+            stdio: 'inherit',
             env: {
                 ...process.env,
-                ...options.env
-            }
+                ...options.env,
+            },
         });
         child.on('close', (code) => {
             if (code === 0) {

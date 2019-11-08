@@ -4,7 +4,8 @@
   "private": true,
   "description": "GitHub actions for Bumped",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
+    "lint": "eslint --ext ts .",
     "test": "jest"
   },
   "repository": {
@@ -21,12 +22,18 @@
     "@actions/core": "^1.2.0"
   },
   "devDependencies": {
+    "@bumped-inc/eslint-config": "^3.4.0",
     "@types/jest": "^24.0.22",
     "@types/node": "^12.12.6",
+    "eslint": "^6.6.0",
     "jest": "^24.9.0",
     "jest-circus": "^24.9.0",
     "prettier": "^1.18.2",
     "ts-jest": "^24.1.0",
     "typescript": "^3.7.2"
+  },
+  "prettier": "@bumped-inc/eslint-config/prettier",
+  "eslintConfig": {
+    "extends": "@bumped-inc"
   }
 }
