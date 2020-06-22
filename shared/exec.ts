@@ -18,10 +18,10 @@ export function exec(
           stdio: "inherit",
           env: {
             ...process.env,
-            ...options.env
-          }
+            ...options.env,
+          },
         });
-        child.on("close", code => {
+        child.on("close", (code) => {
           if (code === 0) {
             resolve();
           } else {
